@@ -11,7 +11,7 @@ public class Ticket {
     private Integer ticketId;
 
     @Column(name = "ticketSubmittedBy")
-    private String ticketSubmittedBy;
+    private Integer ticketSubmittedBy;
 
     @Column(name = "ticketType")
     private String ticketType;
@@ -27,7 +27,7 @@ public class Ticket {
 
     public Ticket() {}
 
-    public Ticket(String ticketSubmittedBy, String ticketType, Integer ticketAmount, String ticketDescription) {
+    public Ticket(Integer ticketSubmittedBy, String ticketType, Integer ticketAmount, String ticketDescription) {
         this.ticketSubmittedBy = ticketSubmittedBy;
         this.ticketType = ticketType;
         this.ticketAmount = ticketAmount;
@@ -35,7 +35,7 @@ public class Ticket {
         this.ticketStatus = "Pending";
     }
 
-    public Ticket(Integer ticketId, String ticketSubmittedBy, String ticketType, Integer ticketAmount, String ticketDescription, String ticketStatus) {
+    public Ticket(Integer ticketId, Integer ticketSubmittedBy, String ticketType, Integer ticketAmount, String ticketDescription, String ticketStatus) {
         this.ticketId = ticketId;
         this.ticketSubmittedBy = ticketSubmittedBy;
         this.ticketType = ticketType;
@@ -52,11 +52,11 @@ public class Ticket {
         this.ticketId = ticketId;
     }
 
-    public String getTicketSubmittedBy() {
+    public Integer getTicketSubmittedBy() {
         return ticketSubmittedBy;
     }
 
-    public void setTicketSubmittedBy(String ticketSubmittedBy) {
+    public void setTicketSubmittedBy(Integer ticketSubmittedBy) {
         this.ticketSubmittedBy = ticketSubmittedBy;
     }
 
