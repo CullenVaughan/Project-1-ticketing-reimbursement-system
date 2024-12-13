@@ -3,7 +3,6 @@ package com.example.Server.service;
 import com.example.Server.entity.*;
 import com.example.Server.repository.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +13,6 @@ import java.util.List;
 public class TicketService {
     private TicketRepository ticketRepository;
 
-    @Autowired
     public TicketService(TicketRepository ticketRepository) {
         this.ticketRepository = ticketRepository;
     }

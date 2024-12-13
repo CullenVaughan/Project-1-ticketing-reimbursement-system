@@ -3,7 +3,6 @@ package com.example.Server.service;
 import com.example.Server.entity.Account;
 import com.example.Server.repository.AccountRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +13,6 @@ import java.util.List;
 public class AccountService {
     private AccountRepository accountRepository;
 
-    @Autowired
     public AccountService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
