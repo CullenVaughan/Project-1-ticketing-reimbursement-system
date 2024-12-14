@@ -40,9 +40,9 @@ public class trsController {
         }
     }
 
-    @PatchMapping("/Account/{username}/{role}")
-    public ResponseEntity updateAccount(@PathVariable("username") String username, @PathVariable("role") String role) {
-        accountService.updateAccount(username, role);
+    @PatchMapping("/Account")
+    public ResponseEntity updateAccount(@RequestBody Account account) {
+        accountService.updateAccount(account.getUsername(), account.getRole());
         return ResponseEntity.status(200).body(1);
     }
 

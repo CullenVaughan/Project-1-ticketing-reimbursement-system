@@ -35,7 +35,7 @@ public class AccountService {
     }
 
     public void updateAccount(String username, String updateRole) {
-        Account account = accountRepository.getAccountForUpdate(username);
+        Account account = accountRepository.getAccountForUpdateByUsername(username);
         account.setRole(updateRole);
         accountRepository.save(account);
     }

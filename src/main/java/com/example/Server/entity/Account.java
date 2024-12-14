@@ -27,6 +27,12 @@ public class Account {
         this.role = "Employee";
     }
 
+    public Account(Integer accountId, String username, String role) {
+        this.accountId = accountId;
+        this.username = username;
+        this.role = role;
+    }
+
     public Account(Integer accountId, String username, String password, String role) {
         this.accountId = accountId;
         this.username = username;
