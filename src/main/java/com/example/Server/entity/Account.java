@@ -24,7 +24,6 @@ public class Account {
     public Account(String username, String password) {
         this.username = username;
         this.password = password;
-        this.role = "Employee";
     }
 
     public Account(Integer accountId, String username, String role) {

@@ -49,10 +49,8 @@ public class UserLoginTest {
         HttpResponse<String> response = webClient.send(postRequest, HttpResponse.BodyHandlers.ofString());
         int status = response.statusCode();
 
-        ObjectMapper om = new ObjectMapper();
-
         Account expectedResult = new Account(9999, "testuser1", "password", "Employee");
-        Account actualResult = om.readValue(response.body().toString(), Account.class);
+        Account actualResult = objectMapper.readValue(response.body().toString(), Account.class);
 
         Assertions.assertEquals(200, status);
         Assertions.assertEquals(expectedResult, actualResult);

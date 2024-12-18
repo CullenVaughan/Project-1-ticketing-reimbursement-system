@@ -6,6 +6,7 @@ import com.example.Server.service.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class trsController {
     private AccountService accountService;
@@ -71,13 +72,13 @@ public class trsController {
         return ResponseEntity.status(200).body(ticketService.getAllTicketsByStatus(ticketStatus));
     }
 
-    @GetMapping("/Ticket/{accountId}")
+    @GetMapping("/Ticket/{blank1}/{blank2}/{accountId}")
     public ResponseEntity getAllTicketsById(@PathVariable("accountId") Integer accountId) {
         return ResponseEntity.status(200).body(ticketService.getAllTicketsById(accountId));
     }
 
     @GetMapping("/Ticket/{accountId}/{ticketType}")
-    public ResponseEntity getAllTicketsById(@PathVariable("accountId") Integer accountId, @PathVariable("ticketType") String ticketType) {
+    public ResponseEntity getAllTicketsByIdAndType(@PathVariable("accountId") Integer accountId, @PathVariable("ticketType") String ticketType) {
         return ResponseEntity.status(200).body(ticketService.getAllTicketsByIdAndType(accountId, ticketType));
     }
 

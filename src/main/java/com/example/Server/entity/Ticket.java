@@ -32,7 +32,6 @@ public class Ticket {
         this.ticketType = ticketType;
         this.ticketAmount = ticketAmount;
         this.ticketDescription = ticketDescription;
-        this.ticketStatus = "Pending";
     }
 
     public Ticket(Integer ticketId, Integer ticketSubmittedBy, String ticketType, Integer ticketAmount, String ticketDescription, String ticketStatus) {

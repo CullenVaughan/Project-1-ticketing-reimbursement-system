@@ -20,6 +20,7 @@ public class AccountService {
     public Account insertAccount(Account account) {
         if (account.getUsername() != "" && account.getPassword().length() >= 8) {
             if (accountRepository.getAccountByUsername(account.getUsername()).isEmpty()) {
+                account.setRole("Employee");
                 return (Account) accountRepository.save(account);
             } else {
                 account.setRole("false");

@@ -7,7 +7,9 @@ function NavBar() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <p className="navbar-brand">
-            Ticketing Reimbursement
+            <Link className="nav-link" to="/">
+              Ticketing Reimbursement
+            </Link>
           </p>
           <button
             className="navbar-toggler"
@@ -23,17 +25,17 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/Login">
                   Login
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/Register">
                   Register
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/SignOut">
                   Sign Out
                 </Link>
               </li>

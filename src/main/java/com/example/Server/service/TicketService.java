@@ -19,6 +19,7 @@ public class TicketService {
 
     public Ticket insertTicket(Ticket ticket) {
         if (ticket.getTicketAmount() > 0 && ticket.getTicketDescription() != "") {
+            ticket.setTicketStatus("Pending");
             return (Ticket) ticketRepository.save(ticket);
         } else {
             return null;
