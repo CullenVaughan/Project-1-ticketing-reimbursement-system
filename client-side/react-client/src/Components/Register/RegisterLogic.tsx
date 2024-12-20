@@ -1,7 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import RegisterInput from '../Register/RegisterInput'
 import axios from "axios";
-import { error } from "console";
 
 function RegisterLogic() {
     const [username, setUsername] = useState("");
@@ -18,13 +17,13 @@ function RegisterLogic() {
                 password: password
             })
             .then((Response) => isVisible(Response.status + ""))
-            .catch((error) => isVisible(error.status));
+            .catch((Response) => isVisible(Response.status + ""));
     }
 
-    function isVisible(status : string) {
-        if (status == "200") setIsVisible1(true); else setIsVisible1(false);
-        if (status == "400") setIsVisible2(true); else setIsVisible2(false);
-        if (status == "409") setIsVisible3(true); else setIsVisible3(false);
+    function isVisible(status: string) {
+        if (status === "200") setIsVisible1(true); else setIsVisible1(false);
+        if (status === "400") setIsVisible2(true); else setIsVisible2(false);
+        if (status === "409") setIsVisible3(true); else setIsVisible3(false);
     }
 
     return (
@@ -34,7 +33,7 @@ function RegisterLogic() {
                 password={password} setPassword={setPassword}
                 handleSubmit={handleSubmit}
             />
-            {isVisible1 && <label>Your account has been successfully made.</label>}
+            {isVisible1 && <label>Your account has successfully been made.</label>}
             {isVisible2 && <label>Username is blank or your password has less than 8 characters.</label>}
             {isVisible3 && <label>This username already exists.</label>}
         </>

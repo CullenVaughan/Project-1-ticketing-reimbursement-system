@@ -16,7 +16,7 @@ import org.springframework.context.ApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class UserRegistrationTest {
+public class UserRegistrationTest { 
     ApplicationContext app;
     HttpClient webClient;
     ObjectMapper objectMapper;
@@ -32,12 +32,12 @@ public class UserRegistrationTest {
 
     @AfterEach
     public void tearDown() throws InterruptedException {
-        Thread.sleep(500);
+    	Thread.sleep(500);
     	SpringApplication.exit(app);
     }
 
     @Test
-    public void registerUserSuccessfull() throws IOException, InterruptedException {
+    public void registerUserSuccessfull() throws Exception, IOException, InterruptedException {
         String json = "{\"username\":\"user\",\"password\":\"password\"}";
         HttpRequest postRequest = HttpRequest.newBuilder()
             .uri(URI.create("http://localhost:8080/register"))

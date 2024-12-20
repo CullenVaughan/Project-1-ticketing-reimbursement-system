@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-type RegisterInputprops = {
+type LoginInputProps = {
     username: string, setUsername: React.Dispatch<React.SetStateAction<string>>,
     password: string, setPassword: React.Dispatch<React.SetStateAction<string>>,
     handleSubmit: any
 };
 
-function RegisterInput({
+function LoginInput({
     username, setUsername,
     password, setPassword,
-    handleSubmit}: RegisterInputprops
+    handleSubmit}: LoginInputProps
 ) {
     return (
         <form onSubmit={handleSubmit}>
@@ -27,10 +27,10 @@ function RegisterInput({
                 }></input>
             </label>
             <br/>
-            <button type="submit">Register</button>
+            <button type="submit">Login</button>
             <br/>
         </form>
     )
 }
 
-export default RegisterInput
+export default LoginInput
